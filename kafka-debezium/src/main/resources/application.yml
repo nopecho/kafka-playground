@@ -1,0 +1,24 @@
+server:
+  port: 8084
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+
+spring:
+  application:
+    name: nopecho-debezium
+  kafka:
+    bootstrap-servers:
+      - localhost:9092
+      - localhost:9093
+      - localhost:9094
+    template:
+      observation-enabled: true
+    listener:
+      observation-enabled: true
