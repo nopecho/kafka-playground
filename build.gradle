@@ -18,6 +18,8 @@ allprojects {
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.17.+")
         implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
         implementation("org.springframework.boot:spring-boot-starter")
+        implementation("org.springframework.boot:spring-boot-starter-actuator")
+        runtimeOnly("io.micrometer:micrometer-registry-prometheus")
 
         testImplementation("org.springframework.boot:spring-boot-starter-test")
         testImplementation("io.kotest:kotest-runner-junit5:${kotestVersion}")
