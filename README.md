@@ -1,6 +1,6 @@
 # Kafka Playground
 
-이 저장소는 Spring Boot 환경에서 Apache Kafka를 사용하기 위한 다양한 모듈을 포함하고 있으며, 테스트 접근 방식에 중점을 두고 있습니다.
+테스트 중심으로 Kotlin + Spring Boot 환경에서 Apache Kafka를 사용하는 다양한 예제를 탐구합니다.
 
 ## kafka-test
 
