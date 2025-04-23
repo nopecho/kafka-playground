@@ -2,6 +2,54 @@
 
 테스트 중심으로 Kotlin + Spring Boot 환경에서 Apache Kafka를 사용하는 다양한 예제를 탐구합니다.
 
+## 로컬 Kafka 클러스터 실행
+
+이 프로젝트는 Docker를 사용하여 로컬 환경에서 3개의 브로커를 가진 Kafka 클러스터를 쉽게 실행할 수 있도록 구성되어 있습니다.
+
+### 사전 요구사항
+
+- Docker 및 Docker Compose가 설치되어 있어야 합니다.
+
+### Kafka 클러스터 시작하기
+
+다음 명령어를 사용하여 Kafka 클러스터를 시작합니다:
+
+```bash
+make up
+```
+
+이 명령어는 다음 컨테이너들을 실행합니다:
+
+- 3개의 Kafka 브로커 (kafka1, kafka2, kafka3)
+- Kafka UI 웹 인터페이스
+
+### Kafka UI 접속하기
+
+Kafka 클러스터가 실행되면 http://localhost:9999 경로로 Kafka UI에 접속할 수 있습니다:
+![kafka-ui.png](images/kafka-ui.png)
+Kafka UI를 통해 다음과 같은 작업을 수행할 수 있습니다:
+
+- 토픽 생성 및 관리
+- 메시지 생산 및 소비 모니터링
+- 브로커 상태 확인
+- 컨슈머 그룹 관리
+
+### Kafka 브로커 접속 정보
+
+각 Kafka 브로커는 다음 포트를 통해 접속할 수 있습니다:
+
+- kafka1: localhost:9092
+- kafka2: localhost:9093
+- kafka3: localhost:9094
+
+### Kafka 클러스터 종료하기
+
+다음 명령어를 사용하여 Kafka 클러스터를 종료합니다:
+
+```bash
+make down
+```
+
 ## kafka-test
 
 `kafka-test` 모듈은 Spring의 내장 Kafka 브로커를 사용하여 Kafka 애플리케이션을 테스트하기 위한 유틸리티와 지원 클래스를 제공합니다.
