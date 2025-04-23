@@ -6,4 +6,5 @@ include 'kafka-producer'
 include 'kafka-consumer'
 include 'kafka-streams'
 include 'kafka-debezium'
+include 'kafka-test'
 
