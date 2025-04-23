@@ -12,14 +12,18 @@ management:
 
 spring:
   application:
-    name: nopecho-producer
+    name: my-producer
   kafka:
     bootstrap-servers:
       - localhost:9092
       - localhost:9093
       - localhost:9094
     producer:
+      acks: all
+      retries: 3
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        enable.idempotence: true
     template:
       observation-enabled: true
